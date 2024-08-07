@@ -1,4 +1,4 @@
-replicaCount: 1
+replicaCount: 2
 
 image:
   repository: siddharth67/block-buster-dev:7.5.0
@@ -11,15 +11,14 @@ nameOverride: ""
 fullnameOverride: ""
 
 service:
-  type: ClusterIP
-  port: 80
-  targetPort: 80
+  type: NodePort
+  nodePort: 3005
 
 namespace:
-  name: demo-app
+  name: 5-demo
   
 labels:
   app:
     name: bb-app
-    version: 7.x.x
+    version: 7.5.0
     env: uat
